@@ -11,11 +11,6 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\bin\Debug\net6.0\Buccacard.Infrastructure.dll
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\bin\Debug\net6.0\Buccacard.Infrastructure.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\bin\Debug\net6.0\Buccacard.Domain.pdb
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets\msbuild.Buccacard.Repository.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets\msbuild.build.Buccacard.Repository.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Buccacard.Repository.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Buccacard.Repository.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Repository\obj\Debug\net6.0\scopedcss\bundle\Buccacard.Repository.styles.css

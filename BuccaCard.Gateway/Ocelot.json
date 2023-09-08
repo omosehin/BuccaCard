@@ -18,6 +18,51 @@
         "AddHeadersToRequest": {
           "Content-Type": "application/json"
         }
+      },
+      {
+        "UpstreamPathTemplate": "/gateway/register-user",
+        "UpstreamHttpMethod": [ "Post" ],
+        "DownstreamPathTemplate": "/auth/register-user",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5266
+          }
+        ],
+        "AddHeadersToRequest": {
+          "Content-Type": "application/json"
+        }
+      },
+      {
+        "UpstreamPathTemplate": "/gateway/register-admin",
+        "UpstreamHttpMethod": [ "Post" ],
+        "DownstreamPathTemplate": "/auth/register-admin",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5266
+          }
+        ],
+        "AddHeadersToRequest": {
+          "Content-Type": "application/json"
+        }
+      },
+      {
+        "UpstreamPathTemplate": "/gateway/comfirm-account",
+        "UpstreamHttpMethod": [ "Post" ],
+        "DownstreamPathTemplate": "/auth/comfirm-user",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5266
+          }
+        ],
+        "AddHeadersToRequest": {
+          "Content-Type": "application/json"
+        }
       }
     ]
   }

@@ -35,7 +35,7 @@ namespace Buccacard.Services.NotificationService
             message.Subject = subject;
             message.Body = html;
 
-            client.Send(message);
+           // client.Send(message);
         }
     }
 }

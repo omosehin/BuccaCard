@@ -14,40 +14,38 @@ using System.Threading.Tasks;
 
 public interface IBaseHttpClient
 {
-    Task<ServiceResponse<T>> JSendPostAsync<T>(string baseUrl, string url, object postdata, string clientId, string accessToken);
+    Task<ServiceResponse<T>> JSendPostAsync<T>(string baseUrl, string url, object postdata);
 }
 
 public class BaseHttpClient : IBaseHttpClient
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly IResponseService _responseService;
-    private readonly ILogger<object>? _logger;
 
-    public BaseHttpClient(IHttpClientFactory httpClientFactory, IResponseService responseService, ILogger<object>? logger = null)
+    public BaseHttpClient(IHttpClientFactory httpClientFactory, IResponseService responseService)
     {
         _httpClientFactory = httpClientFactory;
         _responseService = responseService;
-        _logger = logger;
     }
 
-    public async Task<ServiceResponse<T>> JSendPostAsync<T>(string baseUrl, string url, object postdata, string clientId, string accessToken)
+    public async Task<ServiceResponse<T>> JSendPostAsync<T>(string baseUrl, string url, object postdata)
     {
-        var client = CreateClient(clientId, accessToken);
+        var client = CreateClient();
         url = $"{baseUrl}{url}";
         using var httpResponse = await client.PostAsJsonAsync(url, postdata);
         return await ParseHttpResponse<T>(httpResponse, true);
     }
 
-    private HttpClient CreateClient(string clientId, string accessToken)
+    private HttpClient CreateClient()
     {
         var client = _httpClientFactory.CreateClient();
         client.Timeout = TimeSpan.FromMinutes(30);
         client.DefaultRequestHeaders.Clear();
 
-        if (!string.IsNullOrEmpty(clientId)) client.DefaultRequestHeaders.Add("client-id", clientId);
+        //if (!string.IsNullOrEmpty(clientId)) client.DefaultRequestHeaders.Add("client-id", clientId);
 
-        if (!string.IsNullOrEmpty(accessToken))
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"Bearer {accessToken}");
+        //if (!string.IsNullOrEmpty(accessToken))
+        //    client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"Bearer {accessToken}");
 
         return client;
     }

@@ -68,11 +68,6 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debu
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.UserManagementAPI.csproj.CoreCompileInputs.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.UserManagementAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.UserManagementAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets\msbuild.Buccacard.UserManagementAPI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets\msbuild.build.Buccacard.UserManagementAPI.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Buccacard.UserManagementAPI.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Buccacard.UserManagementAPI.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\scopedcss\bundle\Buccacard.UserManagementAPI.styles.css

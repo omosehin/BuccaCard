@@ -11,4 +11,9 @@ namespace Buccacard.Domain
         public string? LastName { get; set; } = string.Empty;
 
     }
+
+    public class ApplicationRole : IdentityRole  
+    {
+    }
+
 }

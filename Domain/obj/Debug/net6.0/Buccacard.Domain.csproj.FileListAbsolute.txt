@@ -5,11 +5,6 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.AssemblyInfoInputs.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.AssemblyInfo.cs
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.csproj.CoreCompileInputs.cache
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets\msbuild.Buccacard.Domain.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets\msbuild.build.Buccacard.Domain.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Buccacard.Domain.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Buccacard.Domain.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\scopedcss\bundle\Buccacard.Domain.styles.css
@@ -17,3 +12,4 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\refint\Buccacard.Domain.dll
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\ref\Buccacard.Domain.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.csproj.AssemblyReference.cache

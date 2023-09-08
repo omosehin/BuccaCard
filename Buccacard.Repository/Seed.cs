@@ -10,7 +10,7 @@ namespace Buccacard.Repository
     public class Seed
     {
         public static async Task SeedData(UserDbContext context,
-            UserManager<AppUser> userManager, RoleManager<AppUser> roleManager)
+            UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager) 
         {
             if (!userManager.Users.Any())
             {
@@ -25,25 +25,15 @@ namespace Buccacard.Repository
                 user.PasswordHash = hashed;
                 var result = await userManager.CreateAsync(user, "Lsc100ab@");
 
-                if (!result.Succeeded)
+                if (result.Succeeded)
                 {
+                    var newRole = new IdentityRole(UserRole.SuperAdmin.ToString());
 
-                    if (!await roleManager.RoleExistsAsync(UserRole.SuperAdmin.ToString()))
+                    var role = await roleManager.CreateAsync(newRole); 
+                    if (!await userManager.IsInRoleAsync(user, UserRole.SuperAdmin.ToString()))
                     {
-                        var roleStore = new RoleStore<IdentityRole>(context);
-
-                       // await roleManager.CreateAsync(new IdentityRole(roleName: UserRole.SuperAdmin.DisplayName));
-                        if (!context.Roles.Any(r => r.Name == "SuperAdmin"))
-                        {
-                          await  roleStore.CreateAsync(new IdentityRole("SuperAdmin"));
-                        }
+                        await userManager.AddToRoleAsync(user, UserRole.SuperAdmin.ToString());
                     }
-
-                    if (await roleManager.RoleExistsAsync(UserRole.User.ToString()))
-                    {
-                        await userManager.AddToRoleAsync(user, UserRole.User.ToString());
-                    }
-                    
                 }
                 await context.SaveChangesAsync();
 

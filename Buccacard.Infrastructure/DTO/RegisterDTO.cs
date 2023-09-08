@@ -21,4 +21,10 @@ namespace Buccacard.Infrastructure.DTO
         public string FirstName { get; set; } = string.Empty;
         public string? LastName { get; set; }
     }
+
+    public class ComfirmDTO
+    {
+        public string UserId { get; set; } = string.Empty;
+        public string Token { get; set; } = String.Empty;
+    }
 }

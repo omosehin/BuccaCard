@@ -23,11 +23,6 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\BuccaCard.Gateway.csproj.CoreCompileInputs.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\BuccaCard.Gateway.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\BuccaCard.Gateway.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets\msbuild.BuccaCard.Gateway.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets\msbuild.build.BuccaCard.Gateway.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BuccaCard.Gateway.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BuccaCard.Gateway.props
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\scopedcss\bundle\BuccaCard.Gateway.styles.css
@@ -37,3 +32,14 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\BuccaCard.Gateway.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\BuccaCard.Gateway.genruntimeconfig.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\obj\Debug\net6.0\ref\BuccaCard.Gateway.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccaCard.Gateway\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

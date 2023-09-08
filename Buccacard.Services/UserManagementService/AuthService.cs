@@ -18,7 +18,6 @@ namespace Buccacard.Services.UserManagementService
     }
     public class AuthService : IAuthService
     {
-        private readonly UserDbContext _userDbContext;
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IResponseService _responseService;
@@ -30,12 +29,11 @@ namespace Buccacard.Services.UserManagementService
             RoleManager<IdentityRole> roleManager, IResponseService responseService,
             IJwtTokenGenerator jwtTokenGenerator, IConfiguration configuration, IBaseHttpClient baseHttpClient)
         {
-            _userDbContext = userDbContext;
             _userManager = userManager;
             _roleManager = roleManager;
             _responseService = responseService;
             _jwtTokenGenerator = jwtTokenGenerator;
-            _configuration = configuration;
+            _configuration = configuration.GetSection("url");
             _baseHttpClient = baseHttpClient;
         }
 
@@ -47,9 +45,9 @@ namespace Buccacard.Services.UserManagementService
                 var result = await _userManager.ConfirmEmailAsync(retrieveUser, token);
                 if (result.Succeeded)
                 {
-                    _responseService.SuccessResponse(data: "Account Comfirmed.");
+                  return  _responseService.SuccessResponse(data: "Account Comfirmed.");
                 }
-                return _responseService.ErrorResponse<string>($"Account comfirmation failed {result.Errors.First().Description}");
+                return _responseService.ErrorResponse<string>("Account comfirmation failed");
 
             }
             return _responseService.ErrorResponse<string>("Invalid token");
@@ -93,13 +91,14 @@ namespace Buccacard.Services.UserManagementService
             {
                 return _responseService.ErrorResponse<string>("Unable to create user.");
             }
+            var role = new ApplicationRole { Name = UserRole.User.ToString() };
 
-            if (!await _roleManager.RoleExistsAsync(UserRole.User.ToString()) && string.IsNullOrWhiteSpace(model.Role.DisplayName()))
+            if (!await _roleManager.RoleExistsAsync(role.Name) && !string.IsNullOrWhiteSpace(model.Role.DisplayName()))
             {
                 await _roleManager.CreateAsync(new IdentityRole(UserRole.User.ToString()));
             }
 
-            if (await _roleManager.RoleExistsAsync(UserRole.User.ToString()) && string.IsNullOrWhiteSpace(model.Role.DisplayName()))
+            if (await _roleManager.RoleExistsAsync(UserRole.User.ToString()) && !string.IsNullOrWhiteSpace(model.Role.DisplayName()))
             {
                 await _userManager.AddToRoleAsync(newUser, UserRole.User.ToString());
             }
@@ -107,7 +106,7 @@ namespace Buccacard.Services.UserManagementService
             var comfirmationToken = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
             var baseUrl = _configuration.GetValue<string>("GateWayUrl");
             var notificationUrl = _configuration.GetValue<string>("NotificationUrl");
-            var url = $"{baseUrl}/Auth/ConfirmEmail?userId ={newUser.Id}&token={comfirmationToken}";
+            var url = $"{baseUrl}/auth/comfirm-user?userId ={newUser.Id}&token={comfirmationToken}";
             var tokenLink = new Uri(url);
             var emailBody = string.Format(Constants.ConfirmPassWordLink, newUser.FirstName, tokenLink);
             Console.WriteLine($"This is the token link {0}", tokenLink);
@@ -118,8 +117,16 @@ namespace Buccacard.Services.UserManagementService
                 Subject = Constants.ComfirmationSubject,
                 Message = emailBody
             };
-            await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "home/sendemail", emailReq, "N/A", "N/A");
-            return _responseService.SuccessResponse("Successfully Create User.");
+            var sendMail = await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
+            if (sendMail.Status)
+            {
+                return _responseService.SuccessResponse("Successfully Create User.");
+            }
+            else
+            {
+                return _responseService.ErrorResponse<string>(sendMail.Data.ToString());
+
+            }
         }
 
         public async Task<ServiceResponse<string>> Register_Admin(RegisterDTO model)
@@ -154,7 +161,7 @@ namespace Buccacard.Services.UserManagementService
             var comfirmationToken = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
             var baseUrl = _configuration.GetValue<string>("GateWayUrl");
             var notificationUrl = _configuration.GetValue<string>("NotificationUrl");
-            var url = $"{baseUrl}/Auth/ConfirmEmail?userId ={newUser.Id}&token={comfirmationToken}";
+            var url = $"{baseUrl}/auth/comfirm-user?userId ={newUser.Id}&token={comfirmationToken}";
             var tokenLink = new Uri(url);
             var emailBody = string.Format(Constants.ConfirmPassWordLink, newUser.FirstName, tokenLink);
             Console.WriteLine($"This is the token link {0}", tokenLink);
@@ -165,7 +172,7 @@ namespace Buccacard.Services.UserManagementService
                 Subject = Constants.ComfirmationSubject,
                 Message = emailBody
             };
-            await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "home/sendemail", emailReq, "N/A", "N/A");
+            await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "home/sendemail", emailReq);
             return _responseService.SuccessResponse("Successfully Create User.");
         }
 

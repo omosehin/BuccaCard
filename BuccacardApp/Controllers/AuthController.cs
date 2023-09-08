@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Buccacard.UserManagementAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -17,17 +17,16 @@ namespace Buccacard.UserManagementAPI.Controllers
         {
             _authService = authService;
         }
-        [HttpPost("Login"), AllowAnonymous]
+        [HttpPost("login"), AllowAnonymous]
         public async Task<IActionResult> Login(LoginDTO login)=>Ok(await _authService.Login(login));
 
-        [HttpPost("Register_User"), AllowAnonymous]
+        [HttpPost("Register-User"), AllowAnonymous]
         public async Task<IActionResult> RegisterUser(RegisterDTO register) => Ok(await _authService.Register(register));
 
-        [HttpPost("Register_Admin"), Authorize]
+        [HttpPost("Register-Admin"), Authorize(Roles ="User")]
         public async Task<IActionResult> RegisterAdmin(RegisterDTO register) => Ok(await _authService.Register_Admin(register));
 
-
-        [HttpPost("Comfirm_Account"), AllowAnonymous]
-        public async Task<IActionResult> ComfirmAccount(string userId,string token) => Ok(await _authService.ComfirmToken(userId,token));
+        [HttpPost("Comfirm-User"), AllowAnonymous]
+        public async Task<IActionResult> ComfirmAccount(ComfirmDTO token) => Ok(await _authService.ComfirmToken(token.UserId,token.Token));
     }
 }

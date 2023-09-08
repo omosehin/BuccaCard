@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Buccacard.NoficationAPI.Controller
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class HomeController : ControllerBase
     {
         private readonly IEmailService _emailService;

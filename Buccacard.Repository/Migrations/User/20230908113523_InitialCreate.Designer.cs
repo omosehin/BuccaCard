@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buccacard.Repository.Migrations.User
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20230908102311_InitialCreate")]
+    [Migration("20230908113523_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
