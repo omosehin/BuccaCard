@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BuccaCard.Gateway.props" />
+</Project>

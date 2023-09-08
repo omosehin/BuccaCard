@@ -1,0 +1,6 @@
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.GateWayAPI.csproj.AssemblyReference.cache
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.GateWayAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.GateWayAPI.AssemblyInfoInputs.cache
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.GateWayAPI.AssemblyInfo.cs
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.GateWayAPI.csproj.CoreCompileInputs.cache
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.GateWayAPI.MvcApplicationPartsAssemblyInfo.cache

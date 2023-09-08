@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "bJ6BBbx8Ef6bFHfnQHdaqC7umBB8Ba7IdwC/8L6xEK4=",
+  "Source": "Buccacard.PaymentAPI",
+  "BasePath": "_content/Buccacard.PaymentAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

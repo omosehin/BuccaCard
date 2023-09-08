@@ -1,0 +1,24 @@
+
+  {
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:5298"
+    },
+    "Routes": [
+      {
+        "UpstreamPathTemplate": "/gateway/login",
+        "UpstreamHttpMethod": [ "Post" ],
+        "DownstreamPathTemplate": "/auth/login",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5266
+          }
+        ],
+        "AddHeadersToRequest": {
+          "Content-Type": "application/json"
+        }
+      }
+    ]
+  }
+

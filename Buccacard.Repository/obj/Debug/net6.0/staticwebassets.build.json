@@ -1,0 +1,34 @@
+{
+  "Version": 1,
+  "Hash": "7YqaGuhJTux3yZiMvkbRu4PKTPRs1Mo02qctMSEI8ts=",
+  "Source": "Buccacard.Repository",
+  "BasePath": "_content/Buccacard.Repository",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
+      "Version": 2,
+      "Source": "Buccacard.Infrastructure",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    },
+    {
+      "Identity": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Domain\\Buccacard.Domain.csproj",
+      "Version": 2,
+      "Source": "Buccacard.Domain",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

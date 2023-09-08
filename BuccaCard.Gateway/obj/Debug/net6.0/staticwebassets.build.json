@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "V9iOm0B9PZi3GfhoiLU9YAwliF7Q90fzr7Na31fcSIM=",
+  "Source": "BuccaCard.Gateway",
+  "BasePath": "_content/BuccaCard.Gateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
