@@ -1,3 +1,4 @@
+using Buccacard.GateWayAPI;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
@@ -27,9 +28,10 @@ builder.Services.AddAuthentication(options =>
            IssuerSigningKey = new SymmetricSecurityKey(key)
        };
    });
-//builder.Services.AddCors(options => {
-//    options.AddPolicy("CORSPolicy", builder => builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetIsOriginAllowed((hosts) => true));
-//});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CORSPolicy", builder => builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetIsOriginAllowed((hosts) => true));
+});
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot(builder.Configuration);
 
@@ -41,9 +43,10 @@ builder.Services.AddControllers()
             options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
         });
 var app = builder.Build();
-//app.UseCors("CORSPolicy");
+app.UseCors("CORSPolicy");
 app.UseRouting(); //Without this line the default "Hello World" page will not be displayed
 app.UseAuthorization();
+app.UseMiddleware<GatewayCustomExceptionMiddleware>();
 app.UseEndpoints(endpoints => endpoints.MapControllers()); //Without this line the default "Hello World" page will not be displayed
 app.UseAuthentication();
 app.UseOcelot().Wait();

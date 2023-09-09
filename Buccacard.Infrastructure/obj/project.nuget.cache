@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5DJ9fcljf3xIS1frv9Xk5oKp+jj7IIrplYohptgubAG3IpKiHnW7sBzLr1Xx7qBoBKPUPE0IIdpPddohnxbc4g==",
+  "dgSpecHash": "9QvX/R0EZLiyrpEJAPLsfx3cYWHIMTj+dTxxF3lNU/YqcbL/ptRJRrwqxa+BwxyZbqaiM1N9zaFYE3gM8YcsIQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

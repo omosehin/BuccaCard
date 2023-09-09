@@ -1,10 +1,11 @@
 using AspNetCoreRateLimit;
-using Buccacard.Domain;
-using Buccacard.Infrastructure.DTO;
+using Buccacard.Domain.UserManagement;
+using Buccacard.Infrastructure.DTO.User;
 using Buccacard.Infrastructure.Utility;
 using Buccacard.Repository;
 using Buccacard.Repository.DbContext;
 using Buccacard.Services.UserManagementService;
+using Buccacard.UserManagementAPI;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -22,11 +23,11 @@ var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
-builder.Services.AddDbContext<UserDbContext>(options =>
+builder.Services.AddDbContext<UserDbContext>(options => 
 {
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddIdentity<AppUser, IdentityRole>()
+builder.Services.AddIdentity<AppUser, IdentityRole>(opts=>opts.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>()
     .AddDefaultTokenProviders();
 
@@ -110,6 +111,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting(); //Without this line the default "Hello World" page will not be displayed
+app.UseMiddleware<UserAPICustomExceptionMiddleware>();
 app.UseAuthorization();
 app.UseEndpoints(endpoints => endpoints.MapControllers()); //Without this line the default "Hello World" page will not be displayed
 app.UseAuthentication();

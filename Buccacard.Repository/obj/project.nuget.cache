@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X8l8y6LePrlKjKmYaCCi3x29qUsTfZDj9r7zkNsyhrXULKUTjqSLJwwfeO1XMarywkB8h29dItO8c92WOU5EtQ==",
+  "dgSpecHash": "4jQQZiclsSlWpg4UFNDnbE6bayQP/Hc31sFnYkXQ0L4mtoXU0dmqg2VliByb0j4v6lHQds4jRxXpKppxCJ2UHQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Repository\\Buccacard.Repository.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buccacard.NoficationAPI", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buccacard.Repository", "Buccacard.Repository\Buccacard.Repository.csproj", "{89A8A0D6-A34F-43B4-A238-1F424653FE0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuccaCard.Gateway", "BuccaCard.Gateway\BuccaCard.Gateway.csproj", "{50DA1D1B-79E7-4D62-AF68-855F809BC0CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuccaCard.Gateway", "BuccaCard.Gateway\BuccaCard.Gateway.csproj", "{50DA1D1B-79E7-4D62-AF68-855F809BC0CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buccacard.ProductAPI", "Buccacard.ProductAPI\Buccacard.ProductAPI.csproj", "{52EBD890-E23A-40C7-BC67-619E2DE61682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{50DA1D1B-79E7-4D62-AF68-855F809BC0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50DA1D1B-79E7-4D62-AF68-855F809BC0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50DA1D1B-79E7-4D62-AF68-855F809BC0CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52EBD890-E23A-40C7-BC67-619E2DE61682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52EBD890-E23A-40C7-BC67-619E2DE61682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52EBD890-E23A-40C7-BC67-619E2DE61682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52EBD890-E23A-40C7-BC67-619E2DE61682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

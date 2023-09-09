@@ -9,6 +9,7 @@
       "BuccaCard.Gateway/1.0.0": {
         "dependencies": {
           "AspNetCoreRateLimit": "5.0.0",
+          "Buccacard.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
           "Ocelot": "18.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -273,7 +274,15 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
-      "System.Security.Cryptography.Cng/4.5.0": {}
+      "System.Security.Cryptography.Cng/4.5.0": {},
+      "Buccacard.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "Buccacard.Infrastructure.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -498,6 +507,11 @@
       "sha512": "sha512-WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
       "path": "system.security.cryptography.cng/4.5.0",
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
+    },
+    "Buccacard.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

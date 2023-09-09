@@ -11,4 +11,20 @@ namespace Buccacard.Infrastructure
         [EnumDisplayName(DisplayName = "User")]
         User, 
     }
+
+    public enum CardType
+    {
+        Cooporate = 1,
+        Individual 
+    } 
+
+    public enum OrganisationType
+    {
+        Family = 1,
+        Hospital,
+        Church,
+        Airlines,
+        Govermentt, 
+        Vendor //Shprite,Bukahut,Pricepally
+    }
 }

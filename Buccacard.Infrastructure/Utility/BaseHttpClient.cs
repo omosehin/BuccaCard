@@ -33,7 +33,7 @@ public class BaseHttpClient : IBaseHttpClient
         var client = CreateClient();
         url = $"{baseUrl}{url}";
         using var httpResponse = await client.PostAsJsonAsync(url, postdata);
-        return await ParseHttpResponse<T>(httpResponse, true);
+        return await ParseHttpResponse<T>(httpResponse,true);
     }
 
     private HttpClient CreateClient()
@@ -51,7 +51,7 @@ public class BaseHttpClient : IBaseHttpClient
     }
 
     private async Task<ServiceResponse<T>> ParseHttpResponse<T>(HttpResponseMessage httpResponse,
-        bool isJsendResp = false, bool useNewtonToDes = false)
+       bool isJsendResp = false, bool useNewtonToDes = false)
     {
         switch (httpResponse.StatusCode)
         {
@@ -83,12 +83,17 @@ public class BaseHttpClient : IBaseHttpClient
             return _responseService.SuccessResponse(returnValue, "success");
         }
 
-        var apiResponse = await httpResponse.Content.ReadFromJsonAsync<ServiceResponse<T>>();
-        if (!apiResponse?.Status ?? true) return _responseService.ErrorResponse<T>(apiResponse?.Message ?? "");
-        if (apiResponse != null && apiResponse.Data != null)
+        if (useNewtonToDes)
         {
-            return _responseService.SuccessResponse(apiResponse.Data, apiResponse?.Message ?? "success");
+            var stringResponse = await httpResponse.Content.ReadAsStringAsync();
+            var _apiResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<ServiceResponse<T>>(stringResponse);
+            if (!_apiResponse.Status) return _responseService.ErrorResponse<T>(_apiResponse.Message);
+            return _responseService.SuccessResponse(_apiResponse.Data, "success");
         }
-        return _responseService.ErrorResponse<T>();
+
+        var apiResponse = await httpResponse.Content.ReadFromJsonAsync<ServiceResponse<T>>();
+        return !apiResponse.Status
+            ? _responseService.ErrorResponse<T>(apiResponse.Message)
+            : _responseService.SuccessResponse(apiResponse.Data, apiResponse?.Message ?? "success");
     }
 }

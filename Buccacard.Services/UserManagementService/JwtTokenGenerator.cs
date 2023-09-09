@@ -1,5 +1,5 @@
-﻿using Buccacard.Domain;
-using Buccacard.Infrastructure.DTO;
+﻿using Buccacard.Domain.UserManagement;
+using Buccacard.Infrastructure.DTO.User;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -25,20 +25,21 @@ namespace Buccacard.Services.UserManagementService
 
             var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
 
-            //var claimList = new List<Claim>
-            //{
-            //    new Claim(JwtRegisteredClaimNames.Email, applicationUser.Email),
-            //     new Claim(JwtRegisteredClaimNames.Sub, applicationUser.Id),
-            //     new Claim(JwtRegisteredClaimNames.Name, applicationUser.UserName.ToString()),
-            //     new Claim("appRole", "user")
-            //};
-         var claimList =   new ClaimsIdentity(new Claim[] {
-                     new Claim("Roles", "User"),
-                    });
-            //foreach (var userRole in roles)
-            //{
-            //    claimList.Add(new Claim(ClaimTypes.Role, userRole));
-            //}
+            var claimList = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Email, applicationUser.Email),
+                new Claim(JwtRegisteredClaimNames.Sub, applicationUser.Id),
+                new Claim(JwtRegisteredClaimNames.Name, applicationUser.UserName.ToString()),
+                new Claim(ClaimTypes.NameIdentifier,  applicationUser.Id),
+                new Claim(ClaimTypes.Name,  applicationUser.UserName),
+                new Claim("userId",applicationUser.Id),
+            };
+
+            var rss = _jwtOptions;
+            foreach (var userRole in roles)
+            {
+                claimList.Add(new Claim(ClaimTypes.Role, userRole));
+            }
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Audience = _jwtOptions.Audience,
@@ -50,5 +51,7 @@ namespace Buccacard.Services.UserManagementService
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+
+
     }
 }

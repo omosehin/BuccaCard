@@ -1,4 +1,4 @@
-﻿using Buccacard.Domain;
+﻿using Buccacard.Domain.UserManagement;
 using Buccacard.Infrastructure;
 using Buccacard.Repository.DbContext;
 using HermesApp.Infrastructure.Dictionary;

@@ -13,3 +13,6 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\ref\Buccacard.Domain.dll
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.csproj.AssemblyReference.cache
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\bin\Debug\net6.0\Buccacard.Infrastructure.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\bin\Debug\net6.0\Buccacard.Infrastructure.pdb
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Domain\obj\Debug\net6.0\Buccacard.Domain.csproj.CopyComplete

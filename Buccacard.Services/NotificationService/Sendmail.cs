@@ -1,7 +1,8 @@
 ﻿
+using MailKit.Net.Smtp;
+using MailKit.Security;
 using Microsoft.Extensions.Options;
-using System.Net;
-using System.Net.Mail;
+using MimeKit;
 
 namespace Buccacard.Services.NotificationService
 {
@@ -19,23 +20,19 @@ namespace Buccacard.Services.NotificationService
         }
         public void Send(string to, string subject, string html, string from)
         {
-            SmtpClient client = new SmtpClient();
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse(_mailSettings.EmailFrom));
+            email.To.Add(MailboxAddress.Parse(to));
+            email.Subject = subject;
+            email.Body =new TextPart(MimeKit.Text.TextFormat.Html) { Text = html};
 
-            client.Host = _mailSettings.SmtpHost ?? "N/A";
-            client.Port = _mailSettings.SmtpPort;
-            client.EnableSsl = true;
 
-            client.Credentials = new NetworkCredential("Omosehin14@gmail.com", "Lsc1003177");
+            SmtpClient smtp = new SmtpClient();
 
-            MailMessage message = new MailMessage();
-
-            message.From = new MailAddress(from);
-            message.To.Add(to);
-
-            message.Subject = subject;
-            message.Body = html;
-
-           // client.Send(message);
+            smtp.Connect(_mailSettings.SmtpHost, _mailSettings.SmtpPort, SecureSocketOptions.StartTls);
+            smtp.Authenticate(_mailSettings.SmtpUser, _mailSettings.SmtpPass);
+            smtp.Send(email);
+            smtp.Disconnect(true);
         }
     }
 }

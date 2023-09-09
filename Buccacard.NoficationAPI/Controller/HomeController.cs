@@ -1,6 +1,8 @@
-﻿using Buccacard.Infrastructure.DTO;
+﻿using Buccacard.Infrastructure.DTO.User;
+using Buccacard.Infrastructure.Utility;
 using Buccacard.Services.NotificationService;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 
 namespace Buccacard.NoficationAPI.Controller
 {
@@ -19,7 +21,7 @@ namespace Buccacard.NoficationAPI.Controller
         public IActionResult SendMail(EmailDTO payload)
         {
             _emailService.Send(payload.Email, payload.Subject, payload.Message,payload.Email);
-            return Ok();
+            return Ok(new ResponseService().SuccessResponse("Comfirmation Notification", "Mail Sent!"));
         }
     }
 }

@@ -77,3 +77,6 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debu
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.UserManagementAPI.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\Buccacard.UserManagementAPI.genruntimeconfig.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\obj\Debug\net6.0\ref\Buccacard.UserManagementAPI.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\bin\Debug\net6.0\MailKit.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\bin\Debug\net6.0\MimeKit.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\BuccacardApp\bin\Debug\net6.0\BouncyCastle.Crypto.dll

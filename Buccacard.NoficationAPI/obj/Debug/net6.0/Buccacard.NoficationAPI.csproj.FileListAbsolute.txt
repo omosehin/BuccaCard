@@ -68,3 +68,7 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationA
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\obj\Debug\net6.0\Buccacard.NoficationAPI.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\obj\Debug\net6.0\Buccacard.NoficationAPI.genruntimeconfig.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\obj\Debug\net6.0\ref\Buccacard.NoficationAPI.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\bin\Debug\net6.0\MailKit.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\bin\Debug\net6.0\MimeKit.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.NoficationAPI\bin\Debug\net6.0\Newtonsoft.Json.dll

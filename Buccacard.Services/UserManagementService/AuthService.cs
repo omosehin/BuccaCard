@@ -1,6 +1,7 @@
-﻿using Buccacard.Domain;
+﻿using Buccacard.Domain.UserManagement;
 using Buccacard.Infrastructure;
 using Buccacard.Infrastructure.DTO;
+using Buccacard.Infrastructure.DTO.User;
 using Buccacard.Infrastructure.Utility;
 using Buccacard.Repository.DbContext;
 using HermesApp.Infrastructure.Dictionary;
@@ -59,6 +60,10 @@ namespace Buccacard.Services.UserManagementService
             if (user == null)
             {
                 return _responseService.ErrorResponse<Token>("User does not exist.");
+            }
+            if (!user.EmailConfirmed)
+            {
+                return _responseService.ErrorResponse<Token>("This account has not be comfirmed.");
             }
             if (!await _userManager.CheckPasswordAsync(user, login.PassWord))
             {
@@ -172,7 +177,7 @@ namespace Buccacard.Services.UserManagementService
                 Subject = Constants.ComfirmationSubject,
                 Message = emailBody
             };
-            await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "home/sendemail", emailReq);
+            await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
             return _responseService.SuccessResponse("Successfully Create User.");
         }
 

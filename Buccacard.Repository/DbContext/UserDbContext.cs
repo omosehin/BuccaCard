@@ -1,4 +1,4 @@
-﻿using Buccacard.Domain;
+﻿using Buccacard.Domain.UserManagement;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

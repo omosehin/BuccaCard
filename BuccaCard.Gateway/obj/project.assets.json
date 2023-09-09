@@ -390,6 +390,22 @@
             "rid": "win"
           }
         }
+      },
+      "Buccacard.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Buccacard.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Buccacard.Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -1348,11 +1364,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Buccacard.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Buccacard.Infrastructure/Buccacard.Infrastructure.csproj",
+      "msbuildProject": "../Buccacard.Infrastructure/Buccacard.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AspNetCoreRateLimit >= 5.0.0",
+      "Buccacard.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.21",
       "Ocelot >= 18.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -1384,7 +1406,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
