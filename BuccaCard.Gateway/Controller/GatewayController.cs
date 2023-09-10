@@ -28,7 +28,7 @@ namespace BuccaCard.Gateway.Controller
         public async Task<ActionResult> RegisterUserAsync(RegisterDTO model) => 
                 Ok(await _baseHttpClient.JSendPostAsync<string>(_configuration.GetValue<string>(Urls.AuthBase), Urls.RegisterUser, model));
 
-        [Route("register-admin"),Authorize(Roles ="Admin")]
+        [Route("register-admin"),Authorize(Roles = "SuperAdmin")]
         public async Task<ActionResult> RegisterAdminAsync(RegisterDTO model) => 
                 Ok(await _baseHttpClient.JSendPostAsync<string>(_configuration.GetValue<string>(Urls.AuthBase), Urls.RegisterAdmin, model, Token()));
 

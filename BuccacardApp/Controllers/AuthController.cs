@@ -22,7 +22,7 @@ namespace Buccacard.UserManagementAPI.Controllers
         [HttpPost("Register-User"), AllowAnonymous]
         public async Task<IActionResult> RegisterUser(RegisterDTO register) => Ok(await _authService.Register(register));
 
-        [HttpPost("Register-Admin"),Authorize(Roles ="Admin")]
+        [HttpPost("Register-Admin"),Authorize(Roles ="SuperAdmin")]
         public async Task<IActionResult> RegisterAdmin(RegisterDTO register) => Ok(await _authService.Register_Admin(register));
 
         [HttpPost("Comfirm-User"), AllowAnonymous]

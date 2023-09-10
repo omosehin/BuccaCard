@@ -25,17 +25,18 @@ namespace Buccacard.Services.UserManagementService
         {
 
             var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
-
+            
          
             var claims = new[]
                 {
                     new Claim(ClaimTypes.Name, applicationUser.UserName),
                     new Claim(ClaimTypes.Email,applicationUser.Email),
-                    new Claim(ClaimTypes.Role, "Admin"), 
-                    new Claim("Role", "Admin"),
+                    new Claim(ClaimTypes.Role,roles[0]),
+                    new Claim("Role", roles[0]),
                     new Claim("userId", applicationUser.Id),
                    
                 };
+
             var token = new JwtSecurityToken(
                 expires: DateTime.Now.AddHours(1),
                 claims: claims,

@@ -75,6 +75,7 @@ namespace Buccacard.Services.UserManagementService
                 return _responseService.ErrorResponse<Token>("Invalid Credential.");
             }
             var userRoles = await _userManager.GetRolesAsync(user);
+            var role = userRoles[0];
 
             var token = _jwtTokenGenerator.GenerateToken(user, userRoles);
             return _responseService.SuccessResponse(data: new Token { Jwt = token, RefreshToken = "" });
@@ -118,8 +119,7 @@ namespace Buccacard.Services.UserManagementService
             var notificationUrl = _configuration.GetValue<string>("NotificationUrl");
             var url = $"{baseUrl}/auth/comfirm-user?userId ={newUser.Id}&token={comfirmationToken}";
             var tokenLink = new Uri(url);
-            var emailBody = string.Format(Constants.ConfirmPassWordLink, newUser.FirstName, tokenLink);
-            Console.WriteLine($"This is the token link {0}", tokenLink);
+            var emailBody = string.Format(Constants.ConfirmPassWordLink, newUser.FirstName, tokenLink); 
             var emailReq = new EmailDTO
             {
                 Email = model.Email,

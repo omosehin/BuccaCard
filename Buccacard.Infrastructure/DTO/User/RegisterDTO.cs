@@ -17,7 +17,7 @@ namespace Buccacard.Infrastructure.DTO.User
         public UserRole Role { get; set; } = UserRole.User;
         [Required]
         public string FirstName { get; set; } = string.Empty;
-        public string? LastName { get; set; }
+        public string LastName { get; set; } = null;
     }
 
     public class ComfirmDTO
