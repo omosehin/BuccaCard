@@ -4,8 +4,13 @@ using Buccacard.Infrastructure.DTO;
 using Buccacard.Infrastructure.DTO.User;
 using Buccacard.Infrastructure.Utility;
 using Buccacard.Repository.DbContext;
+using Hangfire;
 using HermesApp.Infrastructure.Dictionary;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Buccacard.Services.UserManagementService
 {
@@ -123,15 +128,14 @@ namespace Buccacard.Services.UserManagementService
                 Message = emailBody
             };
             var sendMail = await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
-            if (sendMail.Status)
+            if (sendMail.Message.Contains("unsuccessful") || !sendMail.Status)
             {
-                return _responseService.SuccessResponse("Successfully Create User.");
-            }
-            else
-            {
-                return _responseService.ErrorResponse<string>(sendMail.Data.ToString());
+                var jobId = BackgroundJob.Schedule<IBaseHttpClient>(x =>
+                x.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq, null), TimeSpan.FromSeconds(1));
+                return _responseService.ErrorResponse<string>($"User successfully created but unable to send comfirm link. {tokenLink}");
 
             }
+            return _responseService.SuccessResponse($"Successfully Create User ,kindly comfirm your account via a link in your email {tokenLink}");
         }
 
         public async Task<ServiceResponse<string>> Register_Admin(RegisterDTO model)
@@ -177,8 +181,12 @@ namespace Buccacard.Services.UserManagementService
                 Subject = Constants.ComfirmationSubject,
                 Message = emailBody
             };
-            await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
-            return _responseService.SuccessResponse("Successfully Create User.");
+          var resultVal =  await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
+            if (resultVal.Message.Contains("unsuccessful") || !resultVal.Status){
+                var jobId = BackgroundJob.Schedule<IBaseHttpClient>(x=>
+                x.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq,null), TimeSpan.FromMinutes(5));
+            }
+            return _responseService.SuccessResponse("Successfully Create User ,kindly comfirm your account via a link in your email");
         }
 
 

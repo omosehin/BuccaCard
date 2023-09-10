@@ -5,6 +5,7 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\bin\Debug\net6.0\Buccacard.PaymentAPI.runtimeconfig.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\bin\Debug\net6.0\Buccacard.PaymentAPI.dll
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\bin\Debug\net6.0\Buccacard.PaymentAPI.pdb
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.csproj.AssemblyReference.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.AssemblyInfoInputs.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.AssemblyInfo.cs
@@ -18,4 +19,3 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.genruntimeconfig.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\ref\Buccacard.PaymentAPI.dll
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.PaymentAPI\obj\Debug\net6.0\Buccacard.PaymentAPI.csproj.AssemblyReference.cache

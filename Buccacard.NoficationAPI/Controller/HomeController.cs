@@ -20,8 +20,12 @@ namespace Buccacard.NoficationAPI.Controller
         [HttpPost("SendEmail")]
         public IActionResult SendMail(EmailDTO payload)
         {
-            _emailService.Send(payload.Email, payload.Subject, payload.Message,payload.Email);
-            return Ok(new ResponseService().SuccessResponse("Comfirmation Notification", "Mail Sent!"));
+           var result =  _emailService.Send(payload.Email, payload.Subject, payload.Message,payload.Email);
+            
+            return result 
+                ? 
+                Ok(new ResponseService().SuccessResponse("Comfirmation Notification", "Mail Sent!")):
+                Ok(new ResponseService().ErrorResponse<string>("unsuccessful"));
         }
     }
 }

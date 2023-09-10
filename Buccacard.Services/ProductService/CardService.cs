@@ -2,6 +2,8 @@
 using Buccacard.Infrastructure.DTO;
 using Buccacard.Infrastructure.DTO.Product;
 using Buccacard.Infrastructure.Utility;
+using System;
+using System.Threading.Tasks;
 
 namespace Buccacard.Services.ProductService
 {

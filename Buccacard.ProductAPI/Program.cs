@@ -1,3 +1,4 @@
+using API.Middleware;
 using Buccacard.Infrastructure.Utility;
 using Buccacard.ProductAPI;
 using Buccacard.Services;
@@ -42,7 +43,6 @@ builder.Services.AddAuthentication(options =>
            IssuerSigningKey = new SymmetricSecurityKey(key)
        };
    });
-builder.Services.AddSingleton<JwtService>(provider => new JwtService(configuration["JwtOptions:Secret"]));
 builder.Services.AddControllers()
         .AddJsonOptions(options =>
         {
@@ -50,14 +50,12 @@ builder.Services.AddControllers()
         });
 var app = builder.Build();
 app.UseRouting(); 
-app.UseMiddleware<ProductCustomExceptionMiddleware>();
+app.UseMiddleware<ProductExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseEndpoints(endpoints => endpoints.MapControllers()); 
 app.MapGet("/", () => "Hello World, this is product management API service !");
 await RunMigration();
-app.Run();
-
 app.Run();
 
 async Task RunMigration()

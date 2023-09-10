@@ -1,6 +1,7 @@
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\bin\Debug\net6.0\Buccacard.Infrastructure.deps.json
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\bin\Debug\net6.0\Buccacard.Infrastructure.dll
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\bin\Debug\net6.0\Buccacard.Infrastructure.pdb
+C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\Buccacard.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\Buccacard.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\Buccacard.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\Buccacard.Infrastructure.AssemblyInfo.cs
@@ -12,4 +13,3 @@ C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastruct
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\refint\Buccacard.Infrastructure.dll
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\Buccacard.Infrastructure.pdb
 C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\ref\Buccacard.Infrastructure.dll
-C:\Users\abayomi.omosehin\Downloads\Assesment\BuccacardApp\Buccacard.Infrastructure\obj\Debug\net6.0\Buccacard.Infrastructure.csproj.AssemblyReference.cache

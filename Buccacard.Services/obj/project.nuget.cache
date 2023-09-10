@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JYoKWcomoHa/9jF7NuQPUAS/fuApdjVkwv3Z973ytFVR5vo6Hlp2UMWlWdMfofDcM4ZSSanBZ/Q2zozzxmfBwQ==",
+  "dgSpecHash": "J1dIP4Q+nM+d591joSWQ2Umm/km64mxCYjtuwg0CiGVg8xGodSdtvVmb9Zac/W1AEyZJdJSIlbhNFSR+Qef/AA==",
   "success": true,
   "projectFilePath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Services\\Buccacard.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\hangfire.core\\1.8.5\\hangfire.core.1.8.5.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.20\\microsoft.aspnetcore.cryptography.internal.6.0.20.nupkg.sha512",
     "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.20\\microsoft.aspnetcore.cryptography.keyderivation.6.0.20.nupkg.sha512",

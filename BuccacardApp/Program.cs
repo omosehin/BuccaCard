@@ -1,3 +1,4 @@
+using API.Middleware;
 using AspNetCoreRateLimit;
 using Buccacard.Domain.UserManagement;
 using Buccacard.Infrastructure.DTO.User;
@@ -6,7 +7,11 @@ using Buccacard.Repository;
 using Buccacard.Repository.DbContext;
 using Buccacard.Services.UserManagementService;
 using Buccacard.UserManagementAPI;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,16 +28,20 @@ var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
-builder.Services.AddDbContext<UserDbContext>(options => 
+builder.Services.AddDbContext<UserDbContext>(options =>
 {
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddIdentity<AppUser, IdentityRole>(opts=>opts.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<AppUser, IdentityRole>(opts => opts.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>()
     .AddDefaultTokenProviders();
-
+builder.Services.AddHangfire(config =>
+{
+    config = GlobalConfiguration.Configuration.UseInMemoryStorage();
+});
 // Adding Authentication
 var key = Encoding.UTF8.GetBytes(configuration["JwtOptions:Secret"]);
+builder.Services.AddAuthorization();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -48,12 +57,10 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuer = false,
         ValidateAudience = false,
-        ValidAudience = configuration["JwtOptions:ValidAudience"],
-        ValidIssuer = configuration["JwtOptions:ValidIssuer"],
+        ValidateIssuerSigningKey = false,
         IssuerSigningKey = new SymmetricSecurityKey(key)
     };
 });
-
 
 
 // builder.Services.AddTransient<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
@@ -62,6 +69,10 @@ builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<IBaseHttpClient, BaseHttpClient>();
 builder.Services.AddScoped<IResponseService, ResponseService>();
+
+GlobalConfiguration.Configuration.UseMemoryStorage();
+
+builder.Services.AddHangfireServer();
 
 builder.Services.AddControllers()
         .AddJsonOptions(options =>
@@ -111,10 +122,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting(); //Without this line the default "Hello World" page will not be displayed
-app.UseMiddleware<UserAPICustomExceptionMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseEndpoints(endpoints => endpoints.MapControllers()); //Without this line the default "Hello World" page will not be displayed
-app.UseAuthentication();
+app.UseHangfireServer();
 await RunMigration();
 app.MapGet("/", () => "Hello World, this is user management service !");
 app.Run();
@@ -127,7 +139,7 @@ async Task RunMigration()
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
         var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        _db.Database.Migrate(); 
-        await Seed.SeedData(_db, userManager,roleManager);
+        _db.Database.Migrate();
+        await Seed.SeedData(_db, userManager, roleManager);
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qeC9o2mZCE8e3XgqD5bINfcNDC09NIUKD0QYoxeHxqs=",
+  "Hash": "s/gwm83FzFSoctsnpdWtZWI6Npt28OlQmwkPpCJbceg=",
   "Source": "Buccacard.ProductAPI",
   "BasePath": "_content/Buccacard.ProductAPI",
   "Mode": "Default",
@@ -10,6 +10,17 @@
       "Identity": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
       "Version": 2,
       "Source": "Buccacard.Infrastructure",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    },
+    {
+      "Identity": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\Buccacard.NoficationAPI.csproj",
+      "Version": 2,
+      "Source": "Buccacard.NoficationAPI",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
       "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",

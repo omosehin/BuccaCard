@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Migrations\Report\" />
     <Folder Include="Migrations\Product\" />
     <Folder Include="Migrations\User\" />
   </ItemGroup>

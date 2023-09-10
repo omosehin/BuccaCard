@@ -12,7 +12,7 @@ namespace Buccacard.Domain.ProductManagement
         public int Id { get; set; }
         public string AppUserId { get; set; }
         public CardType CardType { get; set; } = CardType.Individual;
-        public Organisation? Organisation { get; set; } //individual cardtype won't be categorise as organisation
+        public Organisation Organisation { get; set; } = null; //individual cardtype won't be categorise as organisation
         public double CreditLimit { get; set; }
         public Guid SerialNumber { get; set; } = Guid.NewGuid();
     }

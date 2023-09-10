@@ -8,12 +8,12 @@
   <ItemGroup>
     <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.21" />
-    <PackageReference Include="Ocelot" Version="18.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Buccacard.Infrastructure\Buccacard.Infrastructure.csproj" />
+    <ProjectReference Include="..\Buccacard.Services\Buccacard.Services.csproj" />
   </ItemGroup>
 
 </Project>

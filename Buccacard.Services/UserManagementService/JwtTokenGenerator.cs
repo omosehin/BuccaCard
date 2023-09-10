@@ -2,6 +2,8 @@
 using Buccacard.Infrastructure.DTO.User;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -21,37 +23,29 @@ namespace Buccacard.Services.UserManagementService
         }
         public string GenerateToken(AppUser applicationUser, IList<string> roles)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
 
             var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
 
-            var claimList = new List<Claim>
-            {
-                new Claim(JwtRegisteredClaimNames.Email, applicationUser.Email),
-                new Claim(JwtRegisteredClaimNames.Sub, applicationUser.Id),
-                new Claim(JwtRegisteredClaimNames.Name, applicationUser.UserName.ToString()),
-                new Claim(ClaimTypes.NameIdentifier,  applicationUser.Id),
-                new Claim(ClaimTypes.Name,  applicationUser.UserName),
-                new Claim("userId",applicationUser.Id),
-            };
-
-            var rss = _jwtOptions;
-            foreach (var userRole in roles)
-            {
-                claimList.Add(new Claim(ClaimTypes.Role, userRole));
-            }
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Audience = _jwtOptions.Audience,
-                Issuer = _jwtOptions.Issuer,
-                Subject = new ClaimsIdentity(claimList),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+         
+            var claims = new[]
+                {
+                    new Claim(ClaimTypes.Name, applicationUser.UserName),
+                    new Claim(ClaimTypes.Email,applicationUser.Email),
+                    new Claim(ClaimTypes.Role, "Admin"), 
+                    new Claim("Role", "Admin"),
+                    new Claim("userId", applicationUser.Id),
+                   
+                };
+            var token = new JwtSecurityToken(
+                expires: DateTime.Now.AddHours(1),
+                claims: claims,
+                signingCredentials : new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                );
+           
+           // var token = tokenHandler.CreateToken(tokenDescriptor);
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-
+        
     }
 }

@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Buccacard.ProductAPI.Controller
+namespace Buccacard.ProductAPI
 {
     
     public class CardsController : BaseController
     {
         private readonly ICardService _card; 
-        public CardsController(ICardService card,JwtService jwtService):base(jwtService)
+        public CardsController(ICardService card)
         {
             _card = card;
         }
