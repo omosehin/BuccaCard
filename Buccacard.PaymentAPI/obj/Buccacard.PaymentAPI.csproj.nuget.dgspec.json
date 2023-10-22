@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj": {}
+    "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj": {
+    "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj",
+        "projectUniqueName": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj",
         "projectName": "Buccacard.PaymentAPI",
-        "projectPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj",
+        "projectPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\Buccacard.PaymentAPI.csproj",
         "packagesPath": "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\obj\\",
+        "outputPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.PaymentAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abayomi.omosehin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -70,7 +70,11 @@ builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<IBaseHttpClient, BaseHttpClient>();
 builder.Services.AddScoped<IResponseService, ResponseService>();
 
-GlobalConfiguration.Configuration.UseMemoryStorage();
+builder.Services.AddHangfire(config =>
+               config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+               .UseSimpleAssemblyNameTypeSerializer()
+               .UseDefaultTypeSerializer()
+               .UseMemoryStorage());
 
 builder.Services.AddHangfireServer();
 
@@ -126,7 +130,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseEndpoints(endpoints => endpoints.MapControllers()); //Without this line the default "Hello World" page will not be displayed
-app.UseHangfireServer();
+app.UseHangfireDashboard();
 await RunMigration();
 app.MapGet("/", () => "Hello World, this is user management service !");
 app.Run();

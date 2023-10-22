@@ -27,5 +27,9 @@ namespace Buccacard.UserManagementAPI.Controllers
 
         [HttpPost("Comfirm-User"), AllowAnonymous]
         public async Task<IActionResult> ComfirmAccount(ComfirmDTO token) => Ok(await _authService.ComfirmToken(token.UserId, token.Token));
+
+        [HttpPost("Schedule"),AllowAnonymous]
+        public async Task<IActionResult> Schedule(EmailDTO model) => Ok(await _authService.ScheduleEmail(model));
+
     }
 }

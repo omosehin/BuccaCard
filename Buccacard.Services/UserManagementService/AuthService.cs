@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Buccacard.Services.UserManagementService
@@ -20,7 +23,7 @@ namespace Buccacard.Services.UserManagementService
         Task<ServiceResponse<string>> Register(RegisterDTO model);
         Task<ServiceResponse<string>> ComfirmToken(string userId, string token);
         Task<ServiceResponse<string>> Register_Admin(RegisterDTO model);
-
+        Task<ServiceResponse<bool>> ScheduleEmail(EmailDTO model);
     }
     public class AuthService : IAuthService
     {
@@ -30,10 +33,11 @@ namespace Buccacard.Services.UserManagementService
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
         private readonly IConfiguration _configuration;
         private readonly IBaseHttpClient _baseHttpClient;
+        private readonly IBackgroundJobClient _backgroundJobClient;
 
         public AuthService(UserDbContext userDbContext, UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager, IResponseService responseService,
-            IJwtTokenGenerator jwtTokenGenerator, IConfiguration configuration, IBaseHttpClient baseHttpClient)
+            IJwtTokenGenerator jwtTokenGenerator, IConfiguration configuration, IBaseHttpClient baseHttpClient, IBackgroundJobClient backgroundJobClient)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -41,6 +45,7 @@ namespace Buccacard.Services.UserManagementService
             _jwtTokenGenerator = jwtTokenGenerator;
             _configuration = configuration.GetSection("url");
             _baseHttpClient = baseHttpClient;
+            _backgroundJobClient = backgroundJobClient;
         }
 
         public async Task<ServiceResponse<string>> ComfirmToken(string userId, string token)
@@ -51,7 +56,7 @@ namespace Buccacard.Services.UserManagementService
                 var result = await _userManager.ConfirmEmailAsync(retrieveUser, token);
                 if (result.Succeeded)
                 {
-                  return  _responseService.SuccessResponse(data: "Account Comfirmed.");
+                    return _responseService.SuccessResponse(data: "Account Comfirmed.");
                 }
                 return _responseService.ErrorResponse<string>("Account comfirmation failed");
 
@@ -119,7 +124,7 @@ namespace Buccacard.Services.UserManagementService
             var notificationUrl = _configuration.GetValue<string>("NotificationUrl");
             var url = $"{baseUrl}/auth/comfirm-user?userId ={newUser.Id}&token={comfirmationToken}";
             var tokenLink = new Uri(url);
-            var emailBody = string.Format(Constants.ConfirmPassWordLink, newUser.FirstName, tokenLink); 
+            var emailBody = string.Format(Constants.ConfirmPassWordLink, newUser.FirstName, tokenLink);
             var emailReq = new EmailDTO
             {
                 Email = model.Email,
@@ -181,14 +186,49 @@ namespace Buccacard.Services.UserManagementService
                 Subject = Constants.ComfirmationSubject,
                 Message = emailBody
             };
-          var resultVal =  await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
-            if (resultVal.Message.Contains("unsuccessful") || !resultVal.Status){
-                var jobId = BackgroundJob.Schedule<IBaseHttpClient>(x=>
-                x.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq,null), TimeSpan.FromMinutes(5));
+            var resultVal = await _baseHttpClient.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq);
+            if (resultVal.Message.Contains("unsuccessful") || !resultVal.Status)
+            {
+                var jobId = BackgroundJob.Schedule<IBaseHttpClient>(x =>
+                x.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq, null), TimeSpan.FromMinutes(5));
             }
             return _responseService.SuccessResponse("Successfully Create User ,kindly comfirm your account via a link in your email");
         }
 
+        public async Task<ServiceResponse<bool>> ScheduleEmail(EmailDTO model)
+        {
+            var emailReq = new EmailDTO
+            {
+                Email = model.Email,
+                Name = model.Name,
+                Subject = Constants.ComfirmationSubject,
+                Message = model.Message
+            };
+            var notificationUrl = _configuration.GetValue<string>("NotificationUrl");
 
+            //var jobId = _backgroundJobClient.Schedule<IBaseHttpClient>(x =>
+            //x.JSendPostAsync<string>(notificationUrl, "/home/sendemail", emailReq, null), TimeSpan.FromSeconds(1));
+
+            var jobId2 = _backgroundJobClient.Schedule(() =>Generals.scheduleMethod(model), TimeSpan.FromSeconds(5));
+
+
+            return _responseService.SuccessResponse(true);
+        }
+    }
+
+    public static class Generals
+    {
+        private static readonly HttpClient httpClient = new HttpClient();
+        public async static Task scheduleMethod(EmailDTO model)
+        {
+            var url = "http://localhost:5240/home/sendemail";
+            var httpRequestMessage = new HttpRequestMessage
+            {
+                Content = new StringContent(model.ToJson(), Encoding.UTF8, "application/json")
+            };
+
+            httpRequestMessage.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var response = await httpClient.PostAsync(url,httpRequestMessage.Content);
+        }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj": {}
+    "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj": {
+    "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
         "projectName": "Buccacard.Infrastructure",
-        "projectPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\Buccacard.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abayomi.omosehin\\AppData\\Roaming\\NuGet\\NuGet.Config",

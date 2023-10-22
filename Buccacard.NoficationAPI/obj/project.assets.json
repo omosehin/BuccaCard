@@ -2742,11 +2742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\Buccacard.NoficationAPI.csproj",
+      "projectUniqueName": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\Buccacard.NoficationAPI.csproj",
       "projectName": "Buccacard.NoficationAPI",
-      "projectPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\Buccacard.NoficationAPI.csproj",
+      "projectPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\Buccacard.NoficationAPI.csproj",
       "packagesPath": "C:\\Users\\abayomi.omosehin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\obj\\",
+      "outputPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.NoficationAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abayomi.omosehin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2763,8 +2763,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Services\\Buccacard.Services.csproj": {
-              "projectPath": "C:\\Users\\abayomi.omosehin\\Downloads\\Assesment\\BuccacardApp\\Buccacard.Services\\Buccacard.Services.csproj"
+            "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Services\\Buccacard.Services.csproj": {
+              "projectPath": "C:\\Users\\abayomi.omosehin\\Documents\\PowertechApplication\\Personal\\Assesment\\BuccacardApp\\Buccacard.Services\\Buccacard.Services.csproj"
             }
           }
         }
